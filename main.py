@@ -46,7 +46,9 @@ class Motorki:
 				self.check_collide2(self.ellipse2.width, self.ellipse2.height, self.ellipse2.size, self.player.start.x, self.player.start.y)
 				self.check_collide(self.ellipse.width, self.ellipse.height, self.ellipse.size, self.player2.start.x, self.player2.start.y)
 				self.check_collide2(self.ellipse2.width, self.ellipse2.height, self.ellipse2.size, self.player2.start.x, self.player2.start.y)
-				print(self.player.points())
+				self.speed()
+
+
 				
 
 
@@ -143,11 +145,10 @@ class Motorki:
 
 
 	def speed(self):
-		while self.settings.game_active:
-			self.speed_increase()
-		if self.settings.game_active == False:
+		if not self.settings.game_active:
 			self.settings.player_speed = 2
-
+		else:
+			self.settings.player_speed += 0.004
 
 
 
